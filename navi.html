@@ -26,12 +26,21 @@
                             gnb_li_href : "./board.html"
                         }
                     ]
+            const targetul = document.getElementById("gnb");
+            let gnblis = "";
 
-                document.querySelector("#gnb").innerHTML = `
-                <li><a href="${nav_data[0].gnb_li_href}">${nav_data[0].gnb_li_a}</a></li>
-                <li><a href="${nav_data[1].gnb_li_href}">${nav_data[1].gnb_li_a}</a></li>
-                <li><a href="${nav_data[2].gnb_li_href}">${nav_data[2].gnb_li_a}</a></li>
-                                            `;
+            for(i in nav_date){
+                gnblis += `<li>
+                            <a href="${nav_date[i]["gnb_li_href"]}">
+                            ${nav_date[i].gnb_li_a}
+                            </a>
+                        </li>`;
+            }
+            
+            targetul.innerHTML = gnblis;
+
+             
+
     </script>
 </body>
 </html>

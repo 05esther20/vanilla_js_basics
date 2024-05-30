@@ -1,12 +1,12 @@
-console.log("한번만 실행되지");
+// console.log("한번만 실행되지");
 
 
 // 초기값을 읽고 조건을 읽고 참이라면 실행하고 연산식실행, 아직도 참이라면 실행하고 연산식실행...
 // 그러다가 조건이 거짓이 되는 순간 for문 종료
 
 
-for(var i = 0; i < 5; i++){
-    console.log("나는 다섯번실행되지");
+for(var i = 0; i < 3; i++){
+    // console.log("나는 세번실행되지");
 }
 
 //for(초기값선언; 조건; 조건을 거짓으로 만들어줄 연산식 ){
@@ -20,7 +20,7 @@ for(var i = 0; i < 5; i++){
         ++count;    //112
         count++;    //112
 
-    console.log(count)  //113
+    // console.log(count)  //113
 
     let multy = 10;
         multy = multy / 3;  //multy /= 3
@@ -36,5 +36,52 @@ for(var i = 0; i < 5; i++){
         startjs += 100;
         startjs += 100; //20원100100
 
-        console.log(mystudy)
-        console.log(startjs)
+        // console.log(mystudy)
+        // console.log(startjs)
+
+    let meg="";
+    for(let i = 0; i < 10; i++){
+        meg +="나 \"열번\" 나오게 해줘 \n";
+    }
+    // console.log(meg)
+
+    const nav_date = [
+        {
+            gnb_li_a : "회사소개",
+            gnb_li_href : "./company.html"
+        },
+        
+        {
+            gnb_li_a : "제품소개",
+            gnb_li_href : "./product.html"
+        },
+        
+        {
+            gnb_li_a : "커뮤니티",
+            gnb_li_href : "./board.html"
+        },
+          
+        {
+            gnb_li_a : "인트라넷",
+            gnb_li_href : "./intro.html"
+        }
+    ]
+
+    //object 접근법
+    // console.log(nav_date[1].gnb_li_href);
+    // console.log(nav_date[1]["gnb_li_href"]);
+
+    let mygnb = "";
+    for(let liea = 0; liea < nav_date.length; liea++ ){
+        mygnb += nav_date[liea].gnb_li_href;
+    }
+    console.log(mygnb);
+
+    let mygnb2 = "";
+    for(let v in nav_date){
+        //console.log("forin문처리 : ",v);
+        mygnb2 +=`${nav_date[v].gnb_li_href}\n`;
+    }
+    console.log(mygnb2);
+
+    // document.getElementsByClassName("gnb").length;
