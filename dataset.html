@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 태그에 데이터 저장</title>
+</head>
+<body>
+    <div id="box" style="display:inline-block">
+        버튼을 클릭해보세요.
+   </div>
+   <div class="btns">
+      <button data-bg="red" data-text="빨강색">1</button>
+      <button data-bg="yellow" data-text="노랑색">2</button>
+      <button data-bg="blue" data-text="파랑색">3</button>
+   </div>
+
+  <script>
+      const targetbox = document.getElementById("box");
+      document.querySelectorAll(".btns button").forEach(function(ele, idx){
+          console.log("각각의 버튼들: ",ele, "버튼들의 순번 :", idx  );
+          //보편적으로 for문보다 forEach는 여러개의 태그묶음을 상대로 한다.           
+           ele.addEventListener('click', function(){
+              console.log(this); // 꼭 먼저 확인하고 개발할 것
+              console.log(this.dataset.bg);
+              targetbox.style.backgroundColor = this.dataset.bg;
+              targetbox.innerHTML = this.dataset.text;
+           })
+      })
+  </script>
+</body>
+</html>
